@@ -14,6 +14,7 @@ class Gitteam < Formula
   depends_on "go" => :build
 
   def install
+    ENV.deparallelize
     ENV["XC_OS"] = "darwin"
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath/"go"
