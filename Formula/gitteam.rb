@@ -16,7 +16,7 @@ class Gitteam < Formula
   def install
     ENV["XC_OS"] = "darwin"
     ENV["XC_ARCH"] = "amd64"
-    ENV["GOPATH"] = buildpath
+    ENV["GOPATH"] = buildpath/"go"
     dir = buildpath/"go/src/github.com/hekmekk/git-team"
     dir.install buildpath.children
     cd dir do
