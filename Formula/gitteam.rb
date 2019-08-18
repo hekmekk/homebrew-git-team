@@ -22,7 +22,7 @@ class Gitteam < Formula
     bin.install "pkg/target/bin/git-team"
     hooks = "#{HOMEBREW_PREFIX}/share/.config/git-team"
     mkdir_p hooks
-    hooks.install "pkg/target/bin/prepare-commit-msg"
+    Pathname(hooks).install "pkg/target/bin/prepare-commit-msg"
     man1.install "pkg/target/man/git-team.1.gz"
     (etc/"bash_completion.d").install "bash_completion/git-team.bash" => "git-team"
   end
