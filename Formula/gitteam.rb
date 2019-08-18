@@ -1,9 +1,11 @@
 class Gitteam < Formula
   desc "Command line interface for managing and enhancing `git commit` messages with co-authors."
   homepage "https://github.com/hekmekk/git-team"
-  url "https://github.com/hekmekk/git-team/archive/v1.3.0.tar.gz"
-  sha256 "d185ef03830d75874eb71b2d8e9673ff3b15ae11561924e990b36379335a940f"
-  head "https://github.com/hekmekk/git-team.git"
+  url "https://github.com/hekmekk/git-team.git",
+      :tag      => "v1.3.0",
+      :revision => "fb9ad5c303438215f50b0a00f08b8b54c2976fda"
+  head "https://github.com/hekmekk/git-team.git",
+       :shallow => false
 
   bottle do
     cellar :any_skip_relocation
