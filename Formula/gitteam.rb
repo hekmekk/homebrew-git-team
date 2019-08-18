@@ -17,17 +17,13 @@ class Gitteam < Formula
     ENV["XC_OS"] = "darwin"
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath/"go"
-    dir = buildpath/"go/src/github.com/hekmekk/git-team"
-    dir.install buildpath.children
-    cd dir do
-      system "make"
-      bin.install "pkg/target/bin/git-team"
-      hooks = "#{HOMEBREW_PREFIX}/share/.config/git-team"
-      mkdir_p hooks
-      hooks.install "pkg/target/bin/prepare-commit-msg"
-      man1.install "pkg/target/man/git-team.1.gz"
-      (etc/"bash_completion.d").install "bash_completion/git-team.bash" => "git-team"
-    end
+    system "make"
+    bin.install "pkg/target/bin/git-team"
+    hooks = "#{HOMEBREW_PREFIX}/share/.config/git-team"
+    mkdir_p hooks
+    hooks.install "pkg/target/bin/prepare-commit-msg"
+    man1.install "pkg/target/man/git-team.1.gz"
+    (etc/"bash_completion.d").install "bash_completion/git-team.bash" => "git-team"
   end
 
   test do
