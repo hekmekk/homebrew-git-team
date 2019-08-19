@@ -20,7 +20,7 @@ class GitTeam < Formula
     ENV["GOPATH"] = buildpath/"go"
     system "make"
     bin.install "pkg/target/bin/git-team"
-    hooks = "#{HOMEBREW_PREFIX}/share/.config/git-team"
+    hooks = "/usr/local/share/.config/git-team/hooks"
     mkdir_p hooks
     Pathname(hooks).install "pkg/target/bin/prepare-commit-msg"
     man1.install "pkg/target/man/git-team.1.gz"
