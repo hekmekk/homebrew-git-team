@@ -1,5 +1,5 @@
 class GitTeam < Formula
-  desc "Command line interface for managing and enhancing `git commit` messages with co-authors."
+  desc "Manage and enhance `git commit` messages with co-authors."
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
       :tag      => "v1.3.0",
