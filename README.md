@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hekmekk/homebrew-git-team.svg?branch=master)](https://travis-ci.org/hekmekk/homebrew-git-team)
+
 # homebrew-git-team
 
 Homebrew formula for [git-team](https://github.com/hekmekk/git-team).
