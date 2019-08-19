@@ -1,4 +1,4 @@
-class Gitteam < Formula
+class GitTeam < Formula
   desc "Command line interface for managing and enhancing `git commit` messages with co-authors."
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
