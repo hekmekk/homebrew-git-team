@@ -1,0 +1,20 @@
+language: objective-c
+env:
+  matrix:
+    - FORMULA_VERSION=
+    - FORMULA_VERSION=--HEAD
+rvm: system
+before_install:
+  - brew update
+  - brew --env
+  - brew config
+# install:
+  # - mkdir -p $(brew --repo)/Library/Taps/hekmekk
+  # - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/hekmekk/homebrew-git-team
+script:
+  - brew install git-team $FORMULA_VERSION --verbose
+  - brew audit git-team --strict
+  - brew test git-team
+  - git-team --version
+matrix:
+  fast_finish: true
