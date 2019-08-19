@@ -18,11 +18,15 @@ class GitTeam < Formula
     ENV["XC_OS"] = "darwin"
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath/"go"
+
+    (buildpath/"go/bin").mkpath
+    (buildpath/"pkg/target/bin").mkpath
+
     system "make"
     bin.install "pkg/target/bin/git-team"
-    hooks = "/usr/local/share/.config/git-team/hooks"
-    mkdir_p hooks
-    Pathname(hooks).install "pkg/target/bin/prepare-commit-msg"
+    hooks = Pathname("/usr/local/share/.config/git-team/hooks")
+    hooks.mkpath
+    hooks.install "pkg/target/bin/prepare-commit-msg"
     man1.install "pkg/target/man/git-team.1.gz"
     (etc/"bash_completion.d").install "bash_completion/git-team.bash" => "git-team"
   end
