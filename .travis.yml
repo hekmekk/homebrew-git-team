@@ -1,12 +1,15 @@
-language: objective-c
-os:
-  - osx
-  - linux
+os: osx
+osx_image: xcode10
+rvm: system
+sudo: true
+
 env:
   matrix:
     - FORMULA_VERSION=
     - FORMULA_VERSION=--HEAD
-rvm: system
+matrix:
+  fast_finish: true
+
 before_install:
   - brew update
   - brew --env
@@ -20,5 +23,3 @@ script:
   - brew audit git-team --strict
   - brew test git-team
   - git-team --version
-matrix:
-  fast_finish: true
