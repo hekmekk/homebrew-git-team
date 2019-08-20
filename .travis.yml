@@ -1,4 +1,7 @@
 language: objective-c
+os:
+  - osx
+sudo: required
 env:
   matrix:
     - FORMULA_VERSION=
