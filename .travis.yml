@@ -15,9 +15,9 @@ before_install:
   - brew update
   - brew --env
   - brew config
-# install:
-  # - mkdir -p $(brew --repo)/Library/Taps/hekmekk
-  # - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/hekmekk/homebrew-git-team
+install:
+  - mkdir -p $(brew --repo)/Library/Taps/hekmekk
+  - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/hekmekk/homebrew-git-team
 script:
   - brew tap hekmekk/git-team
   - brew install git-team $FORMULA_VERSION --verbose
