@@ -23,12 +23,18 @@ class GitTeam < Formula
     (buildpath/"pkg/target/bin").mkpath
 
     system "make"
+
     bin.install "pkg/target/bin/git-team"
-    hooks = Pathname("/usr/local/share/.config/git-team/hooks")
+
+    hooks = (etc/"git-team/hooks")
     hooks.mkpath
     hooks.install "pkg/target/bin/prepare-commit-msg"
+
     man1.install "pkg/target/man/git-team.1.gz"
-    (etc/"bash_completion.d").install "bash_completion/git-team.bash" => "git-team"
+
+    bash_completion = (etc/"bash_completion.d")
+    bash_completion.mkpath
+    bash_completion.install "bash_completion/git-team.bash" => "git-team"
   end
 
   test do
