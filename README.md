@@ -20,6 +20,8 @@ brew install git-team
 
 ## Development
 ```bash
-docker run --rm -i -t -v `pwd`/Formula/:/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/hekmekk/homebrew-git-team/Formula -v `pwd`/../git-team:/root/.cache/Homebrew/git-team--git linuxbrew/brew:2.1.10 /bin/bash
+rm -rf ./src/ && mkdir -p ./src/ \
+&& cp -r ../git-team src/git-team \
+&& docker run --rm -i -t -v `pwd`/Formula/:/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/hekmekk/homebrew-git-team/Formula -v `pwd`/src/git-team:/root/.cache/Homebrew/git-team--git linuxbrew/brew:2.1.10 /bin/bash
 ```
 
