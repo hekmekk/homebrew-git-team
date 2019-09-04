@@ -54,8 +54,10 @@ class GitTeam < Formula
       'update'
     ]
 
+    hooks.install "git-hooks/proxy.sh" => "proxy.sh"
+
     for hook in available_git_hooks do
-      hooks.install "git-hooks/proxy.sh" => hook
+      hooks.install_symlink hooks/"proxy.sh" => hook
     end
 
     man1.install "pkg/target/man/git-team.1.gz"
