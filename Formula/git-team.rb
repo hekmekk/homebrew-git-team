@@ -2,8 +2,8 @@ class GitTeam < Formula
   desc "Manage and enhance `git commit` messages with co-authors"
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
-      :tag      => "v1.3.6",
-      :revision => "63905bccb91e9fd7d2bde734af3932c4d6b9b9cd"
+      :tag      => "v1.3.7",
+      :revision => "844cf78db43aa07ffeb5d5e5c786558e1b9291ed"
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
@@ -20,15 +20,15 @@ class GitTeam < Formula
     ENV["GOPATH"] = buildpath/"go"
 
     (buildpath/"go/bin").mkpath
-    (buildpath/"pkg/target/bin").mkpath
+    (buildpath/"target/bin").mkpath
 
     system "make"
 
-    bin.install "pkg/target/bin/git-team"
+    bin.install "target/bin/git-team"
 
     hooks = (etc/"git-team/hooks")
     hooks.mkpath
-    hooks.install "pkg/target/bin/prepare-commit-msg"
+    hooks.install "target/bin/prepare-commit-msg"
 
     available_git_hooks = [
       'applypatch-msg',
@@ -60,7 +60,7 @@ class GitTeam < Formula
       hooks.install_symlink hooks/"proxy.sh" => hook
     end
 
-    man1.install "pkg/target/man/git-team.1.gz"
+    man1.install "target/man/git-team.1.gz"
 
     bash_completion = (etc/"bash_completion.d")
     bash_completion.mkpath
