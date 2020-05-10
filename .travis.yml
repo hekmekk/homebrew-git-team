@@ -11,9 +11,6 @@ env:
 jobs:
   fast_finish: true
 
-homebrew:
-  update: true
-
 install:
   - brew update
   - brew --env
