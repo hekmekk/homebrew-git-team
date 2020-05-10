@@ -1,5 +1,3 @@
-os: osx
-osx_image: xcode11.4
 rvm: system
 language: ruby
 
@@ -7,7 +5,14 @@ env:
   jobs:
     - FORMULA_VERSION=
     - FORMULA_VERSION=--HEAD
+
 jobs:
+  include:
+    - os: osx
+      osx_image: xcode11.4
+      addons:
+        homebrew:
+          update: true
   fast_finish: true
 
 before_install:
