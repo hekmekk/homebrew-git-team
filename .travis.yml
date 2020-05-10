@@ -11,6 +11,9 @@ env:
 matrix:
   fast_finish: true
 
+homebrew:
+  update: true
+
 before_install:
   - brew update
   - brew --env
