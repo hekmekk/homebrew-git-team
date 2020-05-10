@@ -5,10 +5,10 @@ sudo: true
 language: ruby
 
 env:
-  matrix:
+  jobs:
     - FORMULA_VERSION=
     - FORMULA_VERSION=--HEAD
-matrix:
+jobs:
   fast_finish: true
 
 homebrew:
