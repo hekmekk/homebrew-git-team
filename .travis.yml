@@ -10,7 +10,7 @@ env:
 jobs:
   fast_finish: true
 
-install:
+before_install:
   - brew update
   - brew --env
   - brew config
