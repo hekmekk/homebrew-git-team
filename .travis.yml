@@ -2,6 +2,7 @@ os: osx
 osx_image: xcode11.4
 rvm: system
 language: ruby
+sudo: required
 
 env:
   jobs:
