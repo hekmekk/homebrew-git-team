@@ -12,6 +12,7 @@ jobs:
   fast_finish: true
 
 before_install:
+  - sudo chown -R $USER /Library/Ruby/Gems/
   - brew update
   - brew --env
   - brew config
