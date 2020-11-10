@@ -2,8 +2,8 @@ class GitTeam < Formula
   desc "Manage and enhance `git commit` messages with co-authors"
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
-      :tag      => "v1.5.1",
-      :revision => "7ba46382d1a18c93ca27fd3decb2d74c8861d8cc"
+      :tag      => "v1.5.2",
+      :revision => "109913bfe1e7aa154ad9138e1bd11febacf46a6c"
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
