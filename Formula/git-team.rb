@@ -28,7 +28,8 @@ class GitTeam < Formula
 
     hooks = (etc/"git-team/hooks")
     hooks.mkpath
-    hooks.install "target/bin/prepare-commit-msg"
+    hooks.install "target/bin/prepare-commit-msg-git-team"
+    hooks.install "git-hooks/prepare-commit-msg.sh" => "prepare-commit-msg"
 
     available_git_hooks = [
       'applypatch-msg',
