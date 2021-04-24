@@ -7,10 +7,6 @@ class GitTeam < Formula
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
-  bottle do
-    cellar :any_skip_relocation
-  end
-
   depends_on "go" => :build
 
   def install
