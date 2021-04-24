@@ -25,6 +25,6 @@ docker run --rm -i -t \
 	-v `pwd`/Formula:/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/hekmekk/homebrew-git-team/Formula \
 	-v `pwd`/src:/root/.cache/Homebrew/git-team--git \
 	linuxbrew/brew:3.1.3 \
-	/bin/bash -c "brew install git-team && git-team --help"
+	brew install git-team
 ```
 
