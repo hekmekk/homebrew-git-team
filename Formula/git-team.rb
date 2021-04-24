@@ -26,7 +26,7 @@ class GitTeam < Formula
 
     bin.install "target/bin/git-team"
 
-    hooks = (etc/"git-team/hooks")
+    hooks = Pathname.new("/usr/local/etc/git-team/hooks") # currently hard-coded within git-team
     hooks.mkpath
     hooks.install "target/bin/prepare-commit-msg-git-team"
     hooks.install "git-hooks/prepare-commit-msg.sh" => "prepare-commit-msg"
