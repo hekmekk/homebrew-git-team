@@ -20,7 +20,6 @@ brew install git-team
 
 ## Development
 ```bash
-rm -rf `pwd`/src && git clone git@github.com:hekmekk/git-team `pwd`/src
 docker run --rm -i -t \
 	-v `pwd`/Formula:/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/hekmekk/homebrew-git-team/Formula \
 	linuxbrew/brew:3.1.3 \
