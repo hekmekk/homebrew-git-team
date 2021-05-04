@@ -2,8 +2,8 @@ class GitTeam < Formula
   desc "Manage and enhance `git commit` messages with co-authors"
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
-      :tag      => "v1.5.4",
-      :revision => "60f09baec4dbac284239a73bf93952ff8c9c4cf5"
+      :tag      => "v1.5.5",
+      :revision => "79fa9ed5f5fdd016fb02c938f00636daa1b496ea"
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
@@ -21,41 +21,7 @@ class GitTeam < Formula
     system "make"
 
     bin.install "target/bin/git-team"
-
-    hooks = Pathname.new("/usr/local/etc/git-team/hooks") # currently hard-coded within git-team
-    hooks.mkpath
-    hooks.install "target/bin/prepare-commit-msg-git-team"
-    hooks.install "git-hooks/prepare-commit-msg.sh" => "prepare-commit-msg"
-
-    available_git_hooks = [
-      'applypatch-msg',
-      'commit-msg',
-      'fsmonitor-watchman',
-      'p4-pre-submit',
-      'post-applypatch',
-      'post-checkout',
-      'post-commit',
-      'post-index-change',
-      'post-merge',
-      'post-receive',
-      'post-rewrite',
-      'post-update',
-      'pre-applypatch',
-      'pre-auto-gc',
-      'pre-commit',
-      'pre-push',
-      'pre-rebase',
-      'pre-receive',
-      'push-to-checkout',
-      'sendemail-validate',
-      'update'
-    ]
-
-    hooks.install "git-hooks/proxy.sh" => "proxy.sh"
-
-    for hook in available_git_hooks do
-      hooks.install_symlink hooks/"proxy.sh" => hook
-    end
+    bin.install "target/bin/prepare-commit-msg-git-team"
 
     man1.install "target/man/git-team.1.gz"
 
