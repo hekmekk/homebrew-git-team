@@ -2,8 +2,8 @@ class GitTeam < Formula
   desc "Manage and enhance `git commit` messages with co-authors"
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
-      :tag      => "v1.5.6-rc1",
-      :revision => "89e87f26049cdce95452478112570158ebcaac35"
+      :tag      => "v1.6.0",
+      :revision => "fdcb349aa2351d5fdf9ac0d70cfa21cdfa3975c0"
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
@@ -26,7 +26,7 @@ class GitTeam < Formula
 
     bash_completion = (etc/"bash_completion.d")
     bash_completion.mkpath
-    bash_completion.install "bash_completion/git-team.bash" => "git-team"
+    bash_completion.install "target/completion/bash/git-team.bash" => "git-team"
   end
 
   test do
