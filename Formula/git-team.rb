@@ -2,8 +2,8 @@ class GitTeam < Formula
   desc "Manage and enhance `git commit` messages with co-authors"
   homepage "https://github.com/hekmekk/git-team"
   url "https://github.com/hekmekk/git-team.git",
-      :tag      => "v1.5.5",
-      :revision => "79fa9ed5f5fdd016fb02c938f00636daa1b496ea"
+      :tag      => "v1.5.6-rc1",
+      :revision => "89e87f26049cdce95452478112570158ebcaac35"
   head "https://github.com/hekmekk/git-team.git",
        :shallow => false
 
@@ -21,7 +21,6 @@ class GitTeam < Formula
     system "make"
 
     bin.install "target/bin/git-team"
-    bin.install "target/bin/prepare-commit-msg-git-team"
 
     man1.install "target/man/git-team.1.gz"
 
