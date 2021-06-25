@@ -4,8 +4,7 @@ class GitTeam < Formula
   url "https://github.com/hekmekk/git-team.git",
       :tag      => "v1.7.0",
       :revision => "d9b0234268adcbe540e242e778784975bcfa3a98"
-  head "https://github.com/hekmekk/git-team.git",
-       :shallow => false
+  head "https://github.com/hekmekk/git-team.git"
 
   depends_on "go" => :build
 
