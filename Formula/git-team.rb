@@ -15,15 +15,13 @@ class GitTeam < Formula
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath/"go"
 
-    (buildpath/"go/bin").mkpath
-    (buildpath/"target/bin").mkpath
+    system "go", "install", "./..."
+    bin.install buildpath/"go/bin/git-team"
 
-    system "make"
-
-    bin.install "target/bin/git-team"
-
+    system "make", "man-page"
     man1.install "target/man/git-team.1.gz"
 
+    system "make", "completion"
     bash_completion = (etc/"bash_completion.d")
     bash_completion.mkpath
     bash_completion.install "target/completion/bash/git-team.bash" => "git-team"
