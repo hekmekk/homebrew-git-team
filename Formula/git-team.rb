@@ -7,6 +7,7 @@ class GitTeam < Formula
   head "https://github.com/hekmekk/git-team.git"
 
   depends_on "go" => :build
+  depends_on "git"
 
   def install
     ENV.deparallelize
