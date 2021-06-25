@@ -5,7 +5,7 @@ class GitTeam < Formula
       :tag      => "v1.7.0",
       :revision => "d9b0234268adcbe540e242e778784975bcfa3a98"
   license "MIT"
-  head "https://github.com/hekmekk/git-team.git"
+  head "https://github.com/hekmekk/git-team.git", :branch => "main"
 
   depends_on "go" => :build
   depends_on "git"
