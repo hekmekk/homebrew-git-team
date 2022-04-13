@@ -7,7 +7,7 @@ class GitTeam < Formula
   license "MIT"
   head "https://github.com/hekmekk/git-team.git", :branch => "main"
 
-  depends_on "go" => :build
+  depends_on "go@1.16" => :build
   depends_on "git"
 
   def install
