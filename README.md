@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/hekmekk/homebrew-git-team.svg?branch=master)](https://travis-ci.com/github/hekmekk/homebrew-git-team)
+[![Build Status](https://img.shields.io/travis/com/hekmekk/homebrew-git-team/main?label=BUILD&logo=travis&style=for-the-badge)](https://travis-ci.com/github/hekmekk/homebrew-git-team)
 
 # homebrew-git-team
 
