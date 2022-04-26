@@ -1,0 +1,28 @@
+---
+name: verify
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  verify-formula:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        formula_version: ["", "--HEAD"]
+    steps:
+      - run: |
+          sudo chown -R $(whoami) $(brew --prefix)/*
+          sudo rm -rf /usr/local/opt/go@1.17
+          sudo rm /usr/local/bin/go
+          sudo rm /usr/local/bin/gofmt
+          brew unlink git@2.35.1
+      - run: brew tap hekmekk/git-team
+      - run: brew install git-team ${{ matrix.formula_version }} --verbose
+      # - run: brew audit git-team --strict
+      - run: brew test git-team
+      - run: git-team --version
+
