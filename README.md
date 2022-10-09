@@ -23,6 +23,6 @@ brew install git-team
 docker run --rm -i -t \
 	-v `pwd`/Formula:/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/hekmekk/homebrew-git-team/Formula \
 	linuxbrew/brew:3.2.5 \
-	brew install --verbose git-team
+	/bin/sh -c "brew update && brew install --verbose git-team"
 ```
 
