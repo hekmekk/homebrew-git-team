@@ -19,7 +19,6 @@ jobs:
           sudo rm -rf /usr/local/opt/go@1.17
           sudo rm /usr/local/bin/go
           sudo rm /usr/local/bin/gofmt
-          brew unlink git@2.35.1
       - run: brew tap hekmekk/git-team
       - run: brew install git-team ${{ matrix.formula_version }} --verbose
       # - run: brew audit git-team --strict
