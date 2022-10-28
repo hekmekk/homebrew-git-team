@@ -23,7 +23,7 @@ class GitTeam < Formula
     man1.install "target/man/git-team.1.gz"
 
     system "make", "completion"
-    bash_completion = (etc/"bash_completion.d")
+    bash_completion = (share/"bash-completion/completions")
     bash_completion.mkpath
     bash_completion.install "target/completion/bash/git-team.bash" => "git-team"
   end
