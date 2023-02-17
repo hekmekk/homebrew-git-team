@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+  # FIXME: verify that Formula version when triggered by PR
   pull_request:
 
 jobs:
