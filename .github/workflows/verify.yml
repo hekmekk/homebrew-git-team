@@ -1,6 +1,7 @@
 ---
 name: Verify black box style
 
+# TODO: run only when Formula changed
 on:
   push:
     branches:
