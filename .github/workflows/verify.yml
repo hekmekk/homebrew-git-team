@@ -8,6 +8,7 @@ on:
 
 jobs:
   verify-formula:
+    # TODO: also run this on ubuntu using linuxbrew
     runs-on: macos-latest
     strategy:
       matrix:
@@ -23,4 +24,3 @@ jobs:
       # - run: brew audit git-team --strict
       - run: brew test git-team
       - run: git-team --version
-
