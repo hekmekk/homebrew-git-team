@@ -1,0 +1,22 @@
+name: verify-published-formula
+run-name: Verify published Formula
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'Formula/git-team.rb' ]
+
+jobs:
+  verify-formula:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+        formula_version: [ "", "--HEAD" ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - run: brew tap hekmekk/git-team
+      - run: brew install git-team ${{ matrix.formula_version }} --verbose
+      - run: brew audit git-team --strict
+      - run: brew test git-team
+      - run: git-team --version

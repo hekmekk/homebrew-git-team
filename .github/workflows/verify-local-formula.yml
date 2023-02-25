@@ -1,0 +1,20 @@
+name: verify-local-formula
+run-name: Verify local Formula
+
+on:
+  pull_request:
+    paths: [ 'Formula/git-team.rb' ]
+
+jobs:
+  verify-local-formula:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: actions/checkout@v3
+      - run: brew install --verbose ./Formula/git-team.rb
+      - run: brew audit git-team --strict
+      - run: brew test git-team
+      - run: git-team --version
