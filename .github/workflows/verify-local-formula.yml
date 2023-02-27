@@ -2,6 +2,9 @@ name: verify-local-formula
 run-name: Verify local Formula
 
 on:
+  push:
+    branches-ignore: [ master ]
+    paths: [ 'Formula/git-team.rb' ]
   pull_request:
     paths: [ 'Formula/git-team.rb' ]
 
