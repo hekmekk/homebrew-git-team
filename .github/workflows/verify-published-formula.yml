@@ -4,7 +4,7 @@ run-name: Verify published Formula
 on:
   push:
     branches: [ master ]
-    paths: [ 'Formula/git-team.rb' ]
+    paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
 
 jobs:
   verify-formula:

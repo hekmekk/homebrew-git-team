@@ -4,9 +4,9 @@ run-name: Verify local Formula
 on:
   push:
     branches-ignore: [ master ]
-    paths: [ 'Formula/git-team.rb' ]
+    paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
   pull_request:
-    paths: [ 'Formula/git-team.rb' ]
+    paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
 
 jobs:
   verify-local-formula:
