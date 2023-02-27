@@ -7,6 +7,7 @@ on:
     paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
   pull_request:
     paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
+  workflow_dispatch:
 
 jobs:
   verify-local-formula:

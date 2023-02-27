@@ -5,6 +5,7 @@ on:
   push:
     branches: [ master ]
     paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
+  workflow_dispatch:
 
 jobs:
   verify-formula:
