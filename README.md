@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/github/actions/workflow/status/hekmekk/homebrew-git-team/verify-published-formula.yml?branch=master&logo=github&style=for-the-badge)](https://github.com/hekmekk/homebrew-git-team/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/hekmekk/homebrew-git-team/verify-published-formula.yaml?branch=master&logo=github&style=for-the-badge)](https://github.com/hekmekk/homebrew-git-team/actions)
 
 # homebrew-git-team
 
