@@ -1,0 +1,21 @@
+name: verify-formula-is-compatible-with-git-team-head
+run-name: Verify Formula is compatible with git-team HEAD
+
+on:
+  schedule:
+    - cron: '30 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  verify-formula:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - run: brew tap hekmekk/git-team
+      - run: brew install git-team --HEAD --verbose
+      - run: brew audit git-team --strict
+      - run: brew test git-team
+      - run: git-team --version
