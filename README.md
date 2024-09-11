@@ -22,7 +22,7 @@ brew install git-team
 ```bash
 docker run --rm -i -t --user linuxbrew \
 	-v `pwd`/Formula:/git-team-formula:ro \
-	linuxbrew/brew:3.2.5 \
+	homebrew/brew:4.3.20 \
 	/bin/sh -c "brew install --verbose /git-team-formula/git-team.rb"
 ```
 
