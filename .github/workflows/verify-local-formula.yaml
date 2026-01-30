@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - run: brew install --verbose ./Formula/git-team.rb
       - run: brew audit git-team --strict
       - run: brew test git-team
