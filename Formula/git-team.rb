@@ -16,8 +16,8 @@ class GitTeam < Formula
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath/"go"
 
-    system "go", "install", "./..."
-    bin.install buildpath/"go/bin/git-team"
+    system "make", "build"
+    bin.install "target/bin/git-team"
 
     system "make", "man-page"
     man1.install "target/man/git-team.1.gz"
