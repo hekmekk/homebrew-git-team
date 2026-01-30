@@ -15,12 +15,12 @@ jobs:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
     runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_DEVELOPER: true
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
       - uses: actions/checkout@v6
       - run: brew install --verbose ./Formula/git-team.rb
-          env:
-            HOMEBREW_DEVELOPER: true
       - run: brew audit git-team --strict
       - run: brew test git-team
       - run: git-team --version
