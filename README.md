@@ -24,6 +24,6 @@ docker run --rm -i -t --user linuxbrew \
   -e HOMEBREW_DEVELOPER="true" \
   -v `pwd`/Formula:/git-team-formula:ro \
   homebrew/brew:latest \
-  /bin/sh -c "brew install --verbose /git-team-formula/git-team.rb"
+  /bin/sh -c "brew install --verbose /git-team-formula/git-team.rb --HEAD"
 ```
 
