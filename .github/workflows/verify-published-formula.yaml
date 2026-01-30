@@ -3,7 +3,7 @@ run-name: Verify published Formula
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths: [ 'Formula/git-team.rb', '.github/workflows/*' ]
   workflow_dispatch:
 
