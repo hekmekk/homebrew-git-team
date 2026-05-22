@@ -15,7 +15,7 @@ jobs:
         formula_version: [ "", "--HEAD" ]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@75ea84e0c056f44fbc237368be867593cd459107 # master
       - run: brew tap hekmekk/git-team
       - run: brew install git-team ${{ matrix.formula_version }} --verbose
       - run: brew audit git-team --strict
