@@ -14,6 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: Homebrew/actions/setup-homebrew@75ea84e0c056f44fbc237368be867593cd459107 # master
+      - run: brew install bubblewrap
       - run: brew tap hekmekk/git-team
       - run: brew trust hekmekk/git-team
       - run: brew install git-team --HEAD --verbose
