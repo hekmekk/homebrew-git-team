@@ -2,8 +2,6 @@ name: verify-formula-is-compatible-with-git-team-head
 run-name: Verify Formula is compatible with git-team HEAD
 
 on:
-  schedule:
-    - cron: '30 16 * * *'
   workflow_dispatch:
 
 jobs:
