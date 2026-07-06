@@ -14,6 +14,8 @@ jobs:
         os: [ ubuntu-latest, macos-latest ]
         formula_version: [ "", "--HEAD" ]
     runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_NO_ASK: true
     steps:
       - uses: Homebrew/actions/setup-homebrew@75ea84e0c056f44fbc237368be867593cd459107 # master
       - run: brew install bubblewrap

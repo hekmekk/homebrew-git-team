@@ -22,6 +22,7 @@ brew install git-team
 ```bash
 docker run --rm -i -t --user linuxbrew \
   -e HOMEBREW_DEVELOPER="true" \
+  -e HOMEBREW_NO_ASK="true" \
   -v `pwd`/Formula:/git-team-formula:ro \
   homebrew/brew:4.6.20@sha256:b0072bfdebf5934ae24b93b44a1928a88057399b3283ffa0177bb86084fdedfd \
   /bin/sh -c "brew install --verbose /git-team-formula/git-team.rb --HEAD"
