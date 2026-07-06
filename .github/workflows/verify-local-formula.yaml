@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: Homebrew/actions/setup-homebrew@75ea84e0c056f44fbc237368be867593cd459107 # master
       - run: brew install bubblewrap
+        if: runner.os == 'Linux'
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - run: brew install --verbose ./Formula/git-team.rb
       - run: brew audit git-team --strict
