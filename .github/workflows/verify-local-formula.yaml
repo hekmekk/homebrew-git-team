@@ -23,6 +23,7 @@ jobs:
       - run: brew install bubblewrap
         if: runner.os == 'Linux'
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - run: brew trust hekmekk/git-team
       - run: brew install --verbose ./Formula/git-team.rb
       - run: brew audit git-team --strict
       - run: brew test git-team
