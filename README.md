@@ -11,7 +11,13 @@ Homebrew formula for [git-team](https://github.com/hekmekk/git-team)
 brew tap hekmekk/git-team
 ```
 
-2. Install git-team
+2. Trust tap
+
+```shell
+brew trust --formula hekmekk/git-team/git-team
+```
+
+3. Install git-team
 
 Install stable release. Use `--HEAD` in case you want to install from the latest commit.
 ```bash
